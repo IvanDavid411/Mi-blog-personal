@@ -1,0 +1,1081 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iván David Perdomo Bermúdez | Blog Personal</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7ff;
+            color: #172554;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #2563eb, #7c3aed, #ec4899);
+            padding: 17px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #fde047;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, #2563eb, #7c3aed, #ec4899);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 950px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 80px);
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.15);
+        }
+
+        .hero h1 span {
+            color: #fde047;
+        }
+
+        .hero p {
+            font-size: 21px;
+            max-width: 750px;
+            margin: auto;
+            margin-bottom: 35px;
+        }
+
+        .basketball {
+            font-size: 75px;
+            margin-bottom: 10px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #fde047;
+            color: #172554;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            background: white;
+        }
+
+        /* SECCIONES */
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #7c3aed;
+        }
+
+        /* SOBRE MI */
+        .about {
+            background: white;
+        }
+
+        .about-container {
+            max-width: 1050px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1.3fr 1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #475569;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+            padding: 30px;
+            border-radius: 25px;
+            border: 2px solid #c4b5fd;
+            box-shadow: 0 10px 25px rgba(76, 29, 149, 0.1);
+        }
+
+        .info-box p {
+            margin-bottom: 14px;
+            color: #334155;
+        }
+
+        .info-box strong {
+            color: #7c3aed;
+        }
+
+        /* HISTORIA */
+        .history {
+            background: linear-gradient(135deg, #fff7ed, #fce7f3);
+        }
+
+        .history-container {
+            max-width: 950px;
+            margin: auto;
+        }
+
+        .history-card {
+            background: white;
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 20px;
+            border-left: 7px solid #ec4899;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        .history-card:nth-child(2) {
+            border-left-color: #2563eb;
+        }
+
+        .history-card:nth-child(3) {
+            border-left-color: #10b981;
+        }
+
+        .history-card:nth-child(4) {
+            border-left-color: #f59e0b;
+        }
+
+        .history-card:nth-child(5) {
+            border-left-color: #7c3aed;
+        }
+
+        .history-card h3 {
+            color: #ec4899;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+
+        .history-card p {
+            color: #475569;
+        }
+
+        /* VIAJES */
+        .travels {
+            background: #eef2ff;
+        }
+
+        .travel-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .travel-card {
+            background: white;
+            padding: 35px;
+            border-radius: 25px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .travel-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .travel-card:first-child {
+            border-top: 7px solid #f59e0b;
+        }
+
+        .travel-card:last-child {
+            border-top: 7px solid #2563eb;
+        }
+
+        .travel-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .travel-card h3 {
+            color: #7c3aed;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .travel-card p {
+            color: #64748b;
+        }
+
+        /* PASIONES */
+        .passions {
+            background: #f8fafc;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border-top: 6px solid #2563eb;
+        }
+
+        .card:nth-child(2) {
+            border-top-color: #ec4899;
+        }
+
+        .card:nth-child(3) {
+            border-top-color: #f59e0b;
+        }
+
+        .card:nth-child(4) {
+            border-top-color: #10b981;
+        }
+
+        .card:nth-child(5) {
+            border-top-color: #8b5cf6;
+        }
+
+        .card:nth-child(6) {
+            border-top-color: #ef4444;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 23px;
+            color: #2563eb;
+        }
+
+        .card p {
+            color: #64748b;
+        }
+
+        /* MI SUEÑO */
+        .dream {
+            background: linear-gradient(135deg, #172554, #312e81, #7c3aed);
+            color: white;
+            text-align: center;
+        }
+
+        .dream-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .dream-icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .dream h2 {
+            font-size: 45px;
+            color: #fde047;
+            margin-bottom: 25px;
+        }
+
+        .dream p {
+            font-size: 20px;
+            color: #e0e7ff;
+            margin-bottom: 20px;
+        }
+
+        .dream-highlight {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 15px 25px;
+            background: rgba(255,255,255,0.12);
+            border-radius: 20px;
+            color: #fde047;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* RUTINA */
+        .routine {
+            background: white;
+        }
+
+        .routine-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .routine-card {
+            padding: 30px;
+            text-align: center;
+            border-radius: 20px;
+            background: #f1f5f9;
+            transition: 0.3s;
+        }
+
+        .routine-card:hover {
+            background: #e0e7ff;
+            transform: scale(1.03);
+        }
+
+        .routine-card h3 {
+            color: #7c3aed;
+            margin: 12px 0;
+        }
+
+        .routine-card p {
+            color: #64748b;
+        }
+
+        /* HOBBIES */
+        .hobbies {
+            background: linear-gradient(135deg, #ecfeff, #eff6ff);
+        }
+
+        .hobby-list {
+            max-width: 950px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .hobby {
+            padding: 15px 25px;
+            background: white;
+            border-radius: 30px;
+            border: 2px solid #93c5fd;
+            color: #1e40af;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .hobby:hover {
+            background: #2563eb;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* FRASE */
+        .quote {
+            text-align: center;
+            background: #fef3c7;
+            padding: 70px 20px;
+        }
+
+        .quote p {
+            max-width: 850px;
+            margin: auto;
+            font-size: 30px;
+            font-weight: bold;
+            color: #92400e;
+        }
+
+        .quote small {
+            display: block;
+            margin-top: 20px;
+            color: #b45309;
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(90deg, #172554, #4c1d95, #831843);
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #fde047;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-container,
+            .travel-container {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .routine-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .dream h2 {
+                font-size: 35px;
+            }
+
+            .quote p {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo">
+            🏀 IVÁN DAVID
+        </div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#historia">Mi historia</a></li>
+            <li><a href="#viajes">Viajes</a></li>
+            <li><a href="#pasiones">Pasiones</a></li>
+            <li><a href="#sueño">Mi sueño</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+
+        <div class="hero-content">
+
+            <div class="basketball">🏀</div>
+
+            <h1>
+                Hola, soy <span>Iván David</span>
+            </h1>
+
+            <p>
+                Bienvenido a mi blog personal. Aquí puedes conocer un poco
+                más sobre mí, mis gustos, mis pasiones, los lugares que he
+                conocido y mis sueños para el futuro.
+            </p>
+
+            <a href="#sobre-mi" class="btn">
+                Conóceme
+            </a>
+
+            <a href="#sueño" class="btn">
+                Mi sueño 🏆
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOBRE MI -->
+    <section class="about" id="sobre-mi">
+
+        <h2 class="section-title">
+            Sobre <span>mí</span>
+        </h2>
+
+        <div class="about-container">
+
+            <div class="about-text">
+
+                <p>
+                    Mi nombre es <strong>Iván David Perdomo Bermúdez</strong>.
+                    Nací el 11 de abril de 2011 y actualmente tengo 15 años.
+                    Nací y vivo en Villavicencio, Colombia.
+                </p>
+
+                <p>
+                    Durante cuatro años viví en Medellín. Fue una etapa
+                    importante de mi vida porque pude conocer nuevos lugares,
+                    personas y vivir experiencias diferentes.
+                </p>
+
+                <p>
+                    Además, he tenido la oportunidad de viajar por muchos
+                    lugares de Colombia. Me gusta viajar porque puedo conocer
+                    diferentes ciudades, paisajes, culturas y vivir nuevas
+                    experiencias.
+                </p>
+
+                <p>
+                    También tuve la oportunidad de viajar a
+                    <strong>Nueva York</strong>. Fue una experiencia muy
+                    especial porque pude conocer una ciudad completamente
+                    diferente y descubrir nuevos lugares.
+                </p>
+
+                <p>
+                    Actualmente estudio en <strong>La Fontana</strong>.
+                    En mi vida diaria trato de combinar mis estudios con
+                    las actividades que más me gustan, especialmente el
+                    deporte.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <p>
+                    <strong>👤 Nombre:</strong><br>
+                    Iván David Perdomo Bermúdez
+                </p>
+
+                <p>
+                    <strong>🎂 Nacimiento:</strong><br>
+                    11 de abril de 2011
+                </p>
+
+                <p>
+                    <strong>📅 Edad:</strong><br>
+                    15 años
+                </p>
+
+                <p>
+                    <strong>📍 Ciudad:</strong><br>
+                    Villavicencio
+                </p>
+
+                <p>
+                    <strong>🏙️ Viví en:</strong><br>
+                    Medellín durante 4 años
+                </p>
+
+                <p>
+                    <strong>✈️ Viajes:</strong><br>
+                    Colombia y Nueva York
+                </p>
+
+                <p>
+                    <strong>🎓 Colegio:</strong><br>
+                    La Fontana
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MI HISTORIA -->
+    <section class="history" id="historia">
+
+        <h2 class="section-title">
+            Un poco de <span>mi historia</span>
+        </h2>
+
+        <div class="history-container">
+
+            <div class="history-card">
+
+                <h3>🌎 Mis primeros años</h3>
+
+                <p>
+                    Nací el 11 de abril de 2011 en Villavicencio. Desde
+                    pequeño he vivido diferentes experiencias que han
+                    ayudado a formar la persona que soy actualmente.
+                </p>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <h3>🏙️ Mi etapa en Medellín</h3>
+
+                <p>
+                    Durante cuatro años viví en Medellín. Esta etapa fue
+                    especial porque pude conocer una ciudad diferente,
+                    descubrir nuevos lugares y vivir momentos que recuerdo
+                    con mucho cariño.
+                </p>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <h3>✈️ Conociendo Colombia</h3>
+
+                <p>
+                    He tenido la oportunidad de viajar por muchos lugares
+                    de Colombia. Estos viajes me han permitido conocer
+                    diferentes paisajes, ciudades y culturas de nuestro país.
+                    Cada viaje ha sido una nueva experiencia y una oportunidad
+                    para conocer algo diferente.
+                </p>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <h3>🗽 Una experiencia en Nueva York</h3>
+
+                <p>
+                    También tuve la oportunidad de viajar a Nueva York.
+                    Fue una experiencia increíble porque pude conocer una
+                    ciudad muy diferente a las que había visitado en Colombia
+                    y descubrir nuevos lugares y costumbres.
+                </p>
+
+            </div>
+
+
+            <div class="history-card">
+
+                <h3>🏡 Mi vida actualmente</h3>
+
+                <p>
+                    Actualmente vivo en Villavicencio y estudio en
+                    La Fontana. Aquí continúo estudiando, entrenando
+                    baloncesto, y trabajando cada día para alcanzar
+                    mis metas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- VIAJES -->
+    <section class="travels" id="viajes">
+
+        <h2 class="section-title">
+            Mis <span>viajes</span> 🌎
+        </h2>
+
+        <div class="travel-container">
+
+            <div class="travel-card">
+
+                <div class="travel-icon">🇨🇴</div>
+
+                <h3>Viajes por Colombia</h3>
+
+                <p>
+                    He viajado por muchos lugares de Colombia y he tenido
+                    la oportunidad de conocer diferentes ciudades, paisajes
+                    y culturas. Viajar por mi país me ha permitido descubrir
+                    lugares increíbles y vivir experiencias que siempre
+                    recordaré.
+                </p>
+
+            </div>
+
+
+            <div class="travel-card">
+
+                <div class="travel-icon">🗽</div>
+
+                <h3>Nueva York</h3>
+
+                <p>
+                    Uno de los viajes que más recuerdo es mi visita a
+                    Nueva York. Fue especial poder conocer una ciudad
+                    tan grande y diferente, recorrer sus lugares y conocer
+                    parte de la cultura de Estados Unidos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PASIONES -->
+    <section class="passions" id="pasiones">
+
+        <h2 class="section-title">
+            Mis <span>pasiones</span>
+        </h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icon">🏀</div>
+
+                <h3>Baloncesto</h3>
+
+                <p>
+                    El baloncesto es una de mis mayores pasiones.
+                    Entreno todos los días porque quiero mejorar mis
+                    habilidades y convertirme cada vez en un mejor jugador.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🏋️</div>
+
+                <h3>Gimnasio</h3>
+
+                <p>
+                    También voy al gimnasio para entrenar mi cuerpo,
+                    mejorar mi fuerza y complementar mi entrenamiento
+                    de baloncesto.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🎵</div>
+
+                <h3>Música</h3>
+
+                <p>
+                    Me gusta mucho escuchar música. Es una de las cosas
+                    que disfruto hacer cuando estoy descansando, entrenando
+                    o simplemente pasando el tiempo.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🎬</div>
+
+                <h3>Películas de terror</h3>
+
+                <p>
+                    Me gustan mucho las películas de terror. Disfruto
+                    las historias que generan suspenso, misterio y
+                    momentos inesperados.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">🐾</div>
+
+                <h3>Animales</h3>
+
+                <p>
+                    Me gustan mucho los animales. Siempre me han parecido
+                    seres increíbles y disfruto compartir tiempo con ellos
+                    y aprender sobre diferentes especies.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">👥</div>
+
+                <h3>Mis amigos</h3>
+
+                <p>
+                    Me gusta salir con mis compañeros, pasar buenos
+                    momentos con ellos, conversar y crear recuerdos
+                    juntos.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MI SUEÑO -->
+    <section class="dream" id="sueño">
+
+        <div class="dream-container">
+
+            <div class="dream-icon">🏀🏆</div>
+
+            <h2>Mi gran sueño</h2>
+
+            <p>
+                Uno de mis grandes sueños para el futuro es llegar a jugar
+                en una <strong>liga profesional de baloncesto</strong>.
+            </p>
+
+            <p>
+                Sé que para conseguirlo necesito trabajar duro, ser
+                disciplinado, entrenar constantemente y nunca dejar de
+                aprender. Por eso entreno todos los días y también voy
+                al gimnasio para mejorar mis capacidades físicas.
+            </p>
+
+            <p>
+                Quiero seguir creciendo como jugador, competir a un nivel
+                cada vez más alto y algún día poder dedicarme
+                profesionalmente al deporte que tanto me apasiona.
+            </p>
+
+            <p>
+                Mi objetivo es seguir esforzándome y aprovechar cada
+                oportunidad para acercarme un poco más a ese sueño.
+            </p>
+
+            <div class="dream-highlight">
+                💪 Disciplina + Trabajo + Pasión = Mi objetivo 🏀
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MI RUTINA -->
+    <section class="routine">
+
+        <h2 class="section-title">
+            Mi día a <span>día</span>
+        </h2>
+
+        <div class="routine-container">
+
+            <div class="routine-card">
+
+                <div style="font-size: 50px;">🎓</div>
+
+                <h3>Estudiar</h3>
+
+                <p>
+                    Dedico parte de mi tiempo a mis estudios y a cumplir
+                    con mis responsabilidades escolares.
+                </p>
+
+            </div>
+
+
+            <div class="routine-card">
+
+                <div style="font-size: 50px;">🏀</div>
+
+                <h3>Entrenar</h3>
+
+                <p>
+                    Entreno baloncesto todos los días para mejorar mis
+                    habilidades, condición física y rendimiento.
+                </p>
+
+            </div>
+
+
+            <div class="routine-card">
+
+                <div style="font-size: 50px;">🏋️</div>
+
+                <h3>Gimnasio</h3>
+
+                <p>
+                    También entreno en el gimnasio para complementar
+                    mi preparación deportiva.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOBBIES -->
+    <section class="hobbies">
+
+        <h2 class="section-title">
+            Cosas que <span>me gustan</span>
+        </h2>
+
+        <div class="hobby-list">
+
+            <div class="hobby">🏀 Jugar baloncesto</div>
+
+            <div class="hobby">🏋️ Ir al gimnasio</div>
+
+            <div class="hobby">🎵 Escuchar música</div>
+
+            <div class="hobby">🎬 Ver películas</div>
+
+            <div class="hobby">👻 Películas de terror</div>
+
+            <div class="hobby">🐾 Los animales</div>
+
+            <div class="hobby">👥 Salir con mis compañeros</div>
+
+            <div class="hobby">🏆 Competir</div>
+
+            <div class="hobby">💪 Entrenar</div>
+
+            <div class="hobby">✈️ Viajar</div>
+
+            <div class="hobby">🌎 Conocer nuevos lugares</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FRASE -->
+    <section class="quote">
+
+        <p>
+            “Los grandes sueños requieren esfuerzo,
+            disciplina y nunca rendirse.”
+        </p>
+
+        <small>
+            — Mi mentalidad para alcanzar mis metas 🏀
+        </small>
+
+    </section>
+
+
+    <!-- FINAL -->
+    <section class="hero" style="min-height: 60vh;">
+
+        <div class="hero-content">
+
+            <div class="basketball">🏀</div>
+
+            <h1>
+                Este es <span>mi mundo</span>
+            </h1>
+
+            <p>
+                Gracias por visitar mi blog personal y conocer un poco
+                más sobre mi vida, mis gustos, mis viajes, mis pasiones
+                y mis sueños.
+            </p>
+
+            <a href="#inicio" class="btn">
+                Volver al inicio ↑
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 <span>Iván David Perdomo Bermúdez</span>
+        </p>
+
+        <p>
+            Mi blog personal 🏀 | Hecho con pasión y dedicación
+        </p>
+
+    </footer>
+
+</body>
+</html>
+```
